@@ -4595,45 +4595,53 @@ Double Battle: No
 AI: Basic Trainer / Force Setup First Turn
 Mugshot: Purple
 
-Mightyena
-Level: 46
+Greninja @ Life Orb
+Level: 55
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Roar
-- Double Edge
-- Sand Attack
+- Ice Beam
+- Gunk Shot
+- Dark Pulse
+- Hydro Pump
+
+Weavile @ Life Orb
+Level: 55
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- KNock Off
+- Icicle Crash
+- Throat Chop
+- Swords Dance
+
+Drapion @ Scope Lens
+Level: 56
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Agility
+- Cross Poison
+- Night Slash
+- Earthquake
+
+Tyranitar @ Choice Band
+Level: 56
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Stone Edge
 - Crunch
+- Superpower
+- Pursuit
 
-Shiftry
-Level: 48
+Bisharp @ Life Orb
+Level: 56
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Torment
-- Double Team
-- Swagger
-- Extrasensory
-
-Cacturne
-Level: 46
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Leech Seed
-- Feint Attack
-- Needle Arm
-- Cotton Spore
-
-Crawdaunt
-Level: 48
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Surf
+- KNock Off
 - Swords Dance
-- Strength
-- Facade
+- Iron Head
+- Sucker Punch
 
-Absol @ Sitrus Berry
-Level: 49
+Hydreigon @ Choice Specs
+Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aerial Ace
-- Rock Slide
-- Swords Dance
-- Slash
+- Dark Pulse
+- Draco Meteor
+- Flash Cannon
+- Fire Blast
 
 === TRAINER_PHOEBE ===
 Name: PHOEBE
@@ -4646,45 +4654,53 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Green
 
-Dusclops
-Level: 48
+Froslass @ Focus Sash
+Level: 58
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Punch
-- Confuse Ray
-- Curse
-- Protect
+- Spikes
+- Taunt
+- Icy Wind
+- Destiny Bond
 
-Banette
-Level: 49
+Gengar @ Choice Specs
+Level: 58
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Sludge Wave
 - Shadow Ball
-- Grudge
-- Will O Wisp
-- Feint Attack
-
-Sableye
-Level: 50
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Double Team
-- Night Shade
-- Feint Attack
-
-Banette
-Level: 49
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Psychic
 - Thunderbolt
-- Facade
+- Dazzling Gleam
 
-Dusclops @ Sitrus Berry
-Level: 51
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Aegislash @ Weakness Policy
+Level: 59
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Swords Dance
+- Shadow Sneak
+- Close Combat
+- Iron Head
+
+Dragapult @ Choice Scarf
+Level: 59
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Draco Meteor
 - Shadow Ball
-- Ice Beam
-- Rock Slide
+- Fire Blast
+- U-turn
+
+Mimikyu @ Life Orb
+Level: 59
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Swords Dance
+- Play Rough
+- Shadow Sneak
+- Wood Hammer
+
+Annihilape @ Sitrus Berry
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Close Combat
+- Outrage
 - Earthquake
+- Phantom Force
 
 === TRAINER_GLACIA ===
 Name: GLACIA
@@ -4697,45 +4713,53 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Pink
 
-Sealeo
-Level: 50
+Arctozolt @ Life Orb
+Level: 61
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Encore
-- Body Slam
-- Hail
-- Ice Ball
+- Freeze-Dry
+- Bolt Beak
+- Icicle Spear
+- Brick Break
 
-Glalie
-Level: 50
+Mamoswine @ Assault Vest
+Level: 61
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Light Screen
-- Crunch
-- Icy Wind
-- Ice Beam
+- Rock Tomb
+- Ice Shard
+- Earthquake
+- Icicle Crash
 
-Sealeo
-Level: 52
+Avalugg @ Heavy-Duty Boots
+Level: 61
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Attract
-- Double Edge
-- Hail
-- Blizzard
+- Body Press
+- Recover
+- Iron Defense
+- Rapid Spin
 
-Glalie
-Level: 52
+Abomasnow @ Leftovers
+Level: 62
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Explosion
-- Hail
-- Ice Beam
+- Protect
+- Leech Seed
+- Substitute
+- Focus Punch
 
-Walrein @ Sitrus Berry
-Level: 53
+Cloyster @ Life Orb
+Level: 63
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Body Slam
-- Ice Beam
-- Sheer Cold
+- Shell Smash
+- Rock Blast
+- Icicle Spear
+- Rapid Spin
+
+Glaceon @ Sitrus Berry
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Blizzard
+- Shadow Ball
+- Hyper Voice
+- Chilling Water
 
 === TRAINER_DRAKE ===
 Name: DRAKE
@@ -4748,45 +4772,53 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Blue
 
-Shelgon
-Level: 52
+Dragonite @ Heavy-Duty Boots
+Level: 65
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Rock Tomb
+- Extreme Speed
 - Dragon Claw
-- Protect
-- Double Edge
-
-Altaria
-Level: 54
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Edge
-- Dragon Breath
+- Fire Punch
 - Dragon Dance
-- Aerial Ace
 
-Kingdra
-Level: 53
+Garchomp @ Rocky Helmet
+Level: 65
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Smokescreen
-- Dragon Dance
-- Surf
-- Body Slam
+- Earthquake
+- Dragon Tail
+- Stealth Rock
+- Spikes
 
-Flygon
-Level: 53
+Dragapult @ Heavy-Duty Boots
+Level: 65
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Flamethrower
-- Crunch
-- Dragon Breath
+- Dragon Darts
+- Hex
+- Will O Wisp
+- Substitute
+
+Baxcalibur @ Heavy-Duty Boots
+Level: 65
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Glaive Rush
+- Swords Dance
+- Ice Shard
 - Earthquake
 
-Salamence @ Sitrus Berry
-Level: 55
+Walking Wake @ Eject Pack
+Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draco Meteor
+- Hydro Steam
 - Flamethrower
-- Dragon Claw
-- Rock Slide
-- Crunch
+- Tera Blast
+
+Goodra @ Leftovers
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Heavy Slam
+- Knock Off
+- Dragon Tail
+- Protect
 
 === TRAINER_ROXANNE_1 ===
 Name: ROXANNE
@@ -4798,28 +4830,44 @@ Items: Potion / Potion
 Double Battle: No
 AI: Basic Trainer
 
-Geodude
+Silicobra @ Oran Berry
 Level: 12
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Tackle
+- Sand Attack
+- Brutal Swing
+- Rock Tomb
+
+Dwebble @ Oran Berry
+Level: 12
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Bug Bite
+- Withdraw
+- Feint Attack
+- Rock Tomb
+
+Geodude @ Oran Berry
+Level: 13
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Tackle
 - Defense Curl
 - Rock Throw
 - Rock Tomb
 
-Geodude
-Level: 12
+Growlithe @ Oran Berry
+Level: 14
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
-- Defense Curl
-- Rock Throw
+- Flame Wheel
+- Bite
+- Double Kick
 - Rock Tomb
 
-Nosepass @ Oran Berry
+Drilbur @ Oran Berry
 Level: 15
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Block
-- Harden
-- Tackle
+- Mud Slap
+- Sand Attack
+- Metal Claw
 - Rock Tomb
 
 === TRAINER_BRAWLY_1 ===
@@ -4832,7 +4880,7 @@ Items: Super Potion / Super Potion
 Double Battle: No
 AI: Basic Trainer
 
-Machop
+Machop @ Oran Berry
 Level: 16
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Karate Chop
@@ -4840,21 +4888,37 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Seismic Toss
 - Bulk Up
 
-Meditite
+Croagunk @ Oran Berry
 Level: 16
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Focus Punch
-- Light Screen
+- Venoshock
+- Revenge
+- Sucker Punch
+- Bulk Up
+
+Mankey @ Oran Berry
+Level: 17
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Low Sweep
+- Knock Off
 - Reflect
 - Bulk Up
 
-Makuhita @ Sitrus Berry
+Scraggy @ Oran Berry
+Level: 18
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Power Up Punch
+- Headbutt
+- Protect
+- Bulk Up
+
+Sawk @ Sitrus Berry
 Level: 19
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Arm Thrust
-- Vital Throw
-- Reversal
-- Bulk Up
+- Mach Punch
+- Fire Punch
+- Thunder Punch
+- Ice Punch
 
 === TRAINER_WATTSON_1 ===
 Name: WATTSON
@@ -4866,37 +4930,53 @@ Items: Super Potion / Super Potion
 Double Battle: No
 AI: Basic Trainer
 
-Voltorb
-Level: 20
+Elekid @ Oran Berry
+Level: 21
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Rollout
-- Spark
-- Self Destruct
+- Thunder Punch
+- Light Screen
+- Rain Dance
 - Shock Wave
 
-Electrike
-Level: 20
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Shock Wave
-- Leer
-- Quick Attack
-- Howl
-
-Magneton
+Joltik @ Oran Berry
 Level: 22
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- Supersonic
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Electroweb
+- Bug Bite
+- Slash
 - Shock Wave
-- Thunder Wave
-- Sonic Boom
 
-Manectric @ Sitrus Berry
-Level: 24
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Quick Attack
-- Thunder Wave
+Rotom @ Oran Berry
+Level: 22
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Shock Wave
-- Howl
+- Shadow Ball
+- Parabolic Charge
+- Psybeam
+
+Stunfisk @ Oran Berry
+Level: 24
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Shock Wave
+- Water Gun
+- Earth Power
+- Charge
+
+Boltund @ Sitrus Berry
+Level: 24
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Bite
+- Shock Wave
+- Roar
+- Flame Charge
+
+Jolteon @ Sitrus Berry
+Level: 25
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Thunder Fang
+- Disarming Voice
+- Shock Wave
+- Shadow Ball
 
 === TRAINER_FLANNERY_1 ===
 Name: FLANNERY
@@ -4908,37 +4988,53 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Numel
+Salazzle @ Oran Berry
 Level: 24
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Overheat
-- Take Down
-- Magnitude
-- Sunny Day
+- Poison Fang
+- Dragon Tail
+- Toxic Spikes
 
-Slugma
+Simisear @ Oran Berry
 Level: 24
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Overheat
-- Smog
-- Light Screen
+- Bite
+- Amnesia
 - Sunny Day
 
-Camerupt
+Lampent @ Oran Berry
+Level: 24
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Overheat
+- Shadow Ball
+- Curse
+- Energy Ball
+
+Turtonator @ Sitrus Berry
+Level: 24
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Overheat
+- Dragon Pulse
+- Iron Defense
+- Sunny Day
+
+Scovillain @ Sitrus Berry
 Level: 26
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Overheat
-- Tackle
-- Sunny Day
-- Attract
+- Seed Bomb
+- Crunch
+- Zen Headbutt
 
-Torkoal @ White Herb
+Flareon @ Sitrus Berry
 Level: 29
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Overheat
-- Sunny Day
-- Body Slam
-- Attract
+- Dig
+- Iron Tail
+- Trailblaze
 
 === TRAINER_NORMAN_1 ===
 Name: NORMAN
@@ -4950,37 +5046,53 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Spinda
+Ditto @ Oran Berry
 Level: 27
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Teeter Dance
-- Psybeam
-- Facade
-- Encore
+- Transform
+- Transform
+- Transform
+- Transform
 
-Vigoroth
+Eevee @ Oran Berry
 Level: 27
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Slash
+- Bite
+- Take down
 - Facade
-- Encore
-- Feint Attack
+- Roar
 
-Linoone
-Level: 29
+Zangoose @ Oran Berry
+Level: 27
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Swords Dance
+- Close Combat
 - Slash
-- Belly Drum
-- Facade
-- Headbutt
+- Detect
 
-Slaking @ Sitrus Berry
-Level: 31
+Ursaring @ Sitrus Berry
+Level: 33
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Hammer Arm
+- Thrash
+- Rest
+- Snore
+
+Blissey @ Sitrus Berry
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Soft-Boiled
+- Light Screen
+- Facade
+- Giga Impact
+
+Snorlax @ Chesto Berry
+Level: 35
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Counter
-- Yawn
-- Facade
-- Feint Attack
+- Belly Drum
+- Heavy Slam
+- Rest
+- High Horsepower
 
 === TRAINER_WINONA_1 ===
 Name: WINONA
@@ -4992,44 +5104,52 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Basic Trainer / Risky
 
-Swablu
-Level: 29
+Fearow @ Oran Berry
+Level: 37
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Perish Song
-- Mirror Move
-- Safeguard
-- Aerial Ace
+- Drill Run
+- Drill Peck
+- Tri Attack
+- U-turn
 
-Tropius
-Level: 29
+Vespiquen @ Oran Berry
+Level: 37
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Sunny Day
+- Attack Order
+- Power Gem
+- Toxic
 - Aerial Ace
-- Solar Beam
-- Synthesis
 
-Pelipper
-Level: 30
+Mandibuzz @ Oran Berry
+Level: 38
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Water Gun
-- Supersonic
-- Protect
+- Dark Pulse
 - Aerial Ace
+- Bone Rush
+- Heat Wave
 
-Skarmory
-Level: 31
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- Sand Attack
-- Fury Attack
-- Steel Wing
-- Aerial Ace
-
-Altaria @ Oran Berry
-Level: 33
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Gliscor @ Sitrus Berry
+Level: 38
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Earthquake
-- Dragon Breath
-- Dragon Dance
+- Swords Dance
+- Fire Fang
+- Aerial Ace
+
+Crobat @ Sitrus Berry
+Level: 40
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Poison Fang
+- Leech Life
+- Psychic Fangs
+- Aerial Ace
+
+Togekiss @ Sitrus Berry
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Extreme Speed
+- Moonblast
+- Drain Punch
 - Aerial Ace
 
 === TRAINER_TATE_AND_LIZA_1 ===
@@ -5042,37 +5162,53 @@ Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
 Double Battle: Yes
 AI: Basic Trainer
 
-Claydol
-Level: 41
+Veluza @ Oran Berry
+Level: 45
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Earthquake
-- Ancient Power
+- Liquidation
+- Crunch
 - Psychic
 - Light Screen
 
-Xatu
-Level: 41
+Malamar @ Oran Berry
+Level: 45
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Psychic
-- Sunny Day
-- Confuse Ray
-- Calm Mind
-
-Lunatone @ Sitrus Berry
-Level: 42
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Light Screen
-- Psychic
-- Hypnosis
-- Calm Mind
-
-Solrock @ Sitrus Berry
-Level: 42
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Sunny Day
-- Solar Beam
-- Psychic
+- Close Combat
 - Flamethrower
+- Thunderbolt
+
+Gallade @ Sitrus Berry
+Level: 46
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Close Combat
+- Psychic
+- Leaf Blade
+- Stone Edge
+
+Gardevoir @ Sitrus Berry
+Level: 46
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Moonblast
+- Mystical Fire
+- Psychic
+- Energy Ball
+
+Espeon @ Sitrus Berry
+Level: 48
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Hyper Voice
+- Psychic
+- Shadow Ball
+- Power Gem
+
+Exeggutor @ Sitrus Berry
+Level: 48
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Uproar
+- Leaf Storm
+- Psychic
+- Sludge Bomb
 
 === TRAINER_JUAN_1 ===
 Name: JUAN
@@ -5084,45 +5220,53 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Luvdisc
-Level: 41
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Water Pulse
-- Attract
-- Sweet Kiss
-- Flail
-
-Whiscash
-Level: 41
+Ludicolo @ Sitrus Berry
+Level:50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Rain Dance
-- Water Pulse
+- Giga Drain
+- Round
+- Surf
+
+Slowbro @ Sitrus Berry
+Level: 50
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psychic
+- Surf
 - Amnesia
-- Earthquake
+- Shadow Ball
 
-Sealeo
-Level: 43
+Wailord @ Chesto Berry
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Encore
-- Body Slam
-- Aurora Beam
-- Water Pulse
-
-Crawdaunt
-Level: 43
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Water Pulse
-- Crabhammer
-- Taunt
-- Leer
-
-Kingdra @ Chesto Berry
-Level: 46
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Water Pulse
-- Double Team
-- Ice Beam
 - Rest
+- Water Spout
+- Noble Roar
+- Aqua Ring
+
+Vaporeon @ Sitrus Berry
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Scald
+- Acid Armor
+- Ice Beam
+- Rain Dance
+
+Walrein @ Sitrus Berry
+Level: 53
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Crunch
+- Dive
+- Ice Beam
+- Steel Roller
+
+Kingdra @ Sitrus Berry
+Level: 55
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Dragon Dance
+- Double Team
+- Wave Crash
+- Outrage
 
 === TRAINER_JERRY_1 ===
 Name: JERRY
@@ -6251,23 +6395,23 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Yellow
 
-Wailord
+Pelipper @ Damp Rock
 Level: 57
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rain Dance
-- Water Spout
-- Double Edge
-- Blizzard
+- Surf
+- Hurricane
+- U-turn
+- Roost
 
-Tentacruel
+Whiscash @ Sitrus Berry
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Toxic
-- Hydro Pump
-- Sludge Bomb
-- Ice Beam
+- Liquidation
+- Psychic Fangs
+- Close Combat
+- Aqua Jet
 
-Ludicolo
+Whiscash @ Sitrus Berry
 Level: 56
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Giga Drain
@@ -6275,7 +6419,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leech Seed
 - Double Team
 
-Whiscash
+Whiscash @ Sitrus Berry
 Level: 56
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
@@ -6283,7 +6427,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Amnesia
 - Hyper Beam
 
-Gyarados
+Gyarados @ Sitrus Berry
 Level: 56
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dragon Dance
