@@ -18,16 +18,21 @@ RustboroCity_Mart_EventScript_PokemartBasic::
 
 	.align 2
 RustboroCity_Mart_Pokemart_Basic:
-	.2byte ITEM_POKE_BALL
-	.2byte ITEM_POTION
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_ESCAPE_ROPE
-	.2byte ITEM_REPEL
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_HELIX_FOSSIL
+	.2byte ITEM_DOME_FOSSIL
+	.2byte ITEM_OLD_AMBER
+	.2byte ITEM_ROOT_FOSSIL
+	.2byte ITEM_CLAW_FOSSIL
+	.2byte ITEM_ARMOR_FOSSIL
+	.2byte ITEM_SKULL_FOSSIL
+	.2byte ITEM_COVER_FOSSIL
+	.2byte ITEM_PLUME_FOSSIL
+	.2byte ITEM_JAW_FOSSIL
+	.2byte ITEM_SAIL_FOSSIL
+	.2byte ITEM_FOSSILIZED_BIRD
+	.2byte ITEM_FOSSILIZED_FISH
+	.2byte ITEM_FOSSILIZED_DRAKE
+	.2byte ITEM_FOSSILIZED_DINO
 	pokemartlistend
 
 RustboroCity_Mart_EventScript_PokemartExpanded::
@@ -38,18 +43,21 @@ RustboroCity_Mart_EventScript_PokemartExpanded::
 
 	.align 2
 RustboroCity_Mart_Pokemart_Expanded:
-	.2byte ITEM_POKE_BALL
-	.2byte ITEM_TIMER_BALL
-	.2byte ITEM_REPEAT_BALL
-	.2byte ITEM_POTION
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_ESCAPE_ROPE
-	.2byte ITEM_REPEL
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_HELIX_FOSSIL
+	.2byte ITEM_DOME_FOSSIL
+	.2byte ITEM_OLD_AMBER
+	.2byte ITEM_ROOT_FOSSIL
+	.2byte ITEM_CLAW_FOSSIL
+	.2byte ITEM_ARMOR_FOSSIL
+	.2byte ITEM_SKULL_FOSSIL
+	.2byte ITEM_COVER_FOSSIL
+	.2byte ITEM_PLUME_FOSSIL
+	.2byte ITEM_JAW_FOSSIL
+	.2byte ITEM_SAIL_FOSSIL
+	.2byte ITEM_FOSSILIZED_BIRD
+	.2byte ITEM_FOSSILIZED_FISH
+	.2byte ITEM_FOSSILIZED_DRAKE
+	.2byte ITEM_FOSSILIZED_DINO
 	pokemartlistend
 
 RustboroCity_Mart_EventScript_PokefanF::

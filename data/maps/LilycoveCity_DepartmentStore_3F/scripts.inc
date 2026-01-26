@@ -13,12 +13,16 @@ LilycoveCity_DepartmentStore_3F_EventScript_ClerkLeft::
 
 	.align 2
 LilycoveCity_DepartmentStore_3F_Pokemart_Vitamins:
-	.2byte ITEM_PROTEIN
-	.2byte ITEM_CALCIUM
-	.2byte ITEM_IRON
-	.2byte ITEM_ZINC
-	.2byte ITEM_CARBOS
-	.2byte ITEM_HP_UP
+	.2byte ITEM_EVIOLITE
+	.2byte ITEM_FLOAT_STONE
+	.2byte ITEM_ROCKY_HELMET
+	.2byte ITEM_AIR_BALLOON
+	.2byte ITEM_RED_CARD
+	.2byte ITEM_RING_TARGET
+	.2byte ITEM_BINDING_BAND
+	.2byte ITEM_EJECT_BUTTON
+	.2byte ITEM_WEAKNESS_POLICY
+	.2byte ITEM_ASSAULT_VEST
 	pokemartlistend
 
 LilycoveCity_DepartmentStore_3F_EventScript_ClerkRight::
@@ -33,13 +37,16 @@ LilycoveCity_DepartmentStore_3F_EventScript_ClerkRight::
 
 	.align 2
 LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters:
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_SP_ATK
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
-	.2byte ITEM_DIRE_HIT
-	.2byte ITEM_GUARD_SPEC
-	.2byte ITEM_X_ACCURACY
+	.2byte ITEM_THROAT_SPRAY
+	.2byte ITEM_EJECT_PACK
+	.2byte ITEM_HEAVY_DUTY_BOOTS
+	.2byte ITEM_BLUNDER_POLICY
+	.2byte ITEM_ROOM_SERVICE
+	.2byte ITEM_UTILITY_UMBRELLA
+	.2byte ITEM_SAFETY_GOGGLES
+	.2byte ITEM_ADRENALINE_ORB
+	.2byte ITEM_TERRAIN_EXTENDER
+	.2byte ITEM_PROTECTIVE_PADS
 	pokemartlistend
 
 LilycoveCity_DepartmentStore_3F_EventScript_TriathleteM::
