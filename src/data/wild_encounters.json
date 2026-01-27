@@ -363,7 +363,7 @@
               {
                 "min_level": 4,
                 "max_level": 4,
-                "species": "SPECIES_AXEW"
+                "species": "SPECIES_FROAKIE"
               }
             ]
           },
@@ -3502,7 +3502,7 @@
               {
                 "min_level": 5,
                 "max_level": 10,
-                "species": "SPECIES_MAGIKARP"
+                "species": "SPECIES_FEEBAS"
               },
               {
                 "min_level": 5,
