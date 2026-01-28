@@ -86,7 +86,7 @@ SootopolisCity_Gym_1F_EventScript_Juan::
 	goto_if_unset FLAG_RECEIVED_TM_WATER_PULSE, SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2
 	goto_if_unset FLAG_BADGE06_GET, SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge
 	msgbox SootopolisCity_Gym_1F_Text_JuanPostBattle, MSGBOX_DEFAULT
-	call_if_ge SS_GiveDynamxBand
+	call SS_GiveDynamxBand
 	release
 	end
 
@@ -320,7 +320,7 @@ SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons:
 
 SS_GiveDynamxBand::
 	msgbox JuanGivesDB
-	additem ITEM_DYNAMAX_BAND
+	giveitem ITEM_DYNAMAX_BAND
 	closemessage
 	msgbox JuanfinishGiveBand
 	return

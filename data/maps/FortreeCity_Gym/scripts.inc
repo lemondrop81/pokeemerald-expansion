@@ -47,6 +47,7 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 	setflag FLAG_ENABLE_WINONA_MATCH_CALL
 	setvar VAR_SCOTT_FORTREE_CALL_STEP_COUNTER, 0
 	setflag FLAG_SCOTT_CALL_FORTREE_GYM
+	call FT_GiveMegaRing
 	release
 	end
 
@@ -321,7 +322,7 @@ FortreeCity_Gym_Text_WinonaRematchNeedTwoMons:
 
 FT_GiveMegaRing::
 	msgbox WinonaGivesMR
-	additem ITEM_MEGA_RING
+	giveitem ITEM_MEGA_RING
 	closemessage
 	msgbox WinonafinishGiveRing
 	return

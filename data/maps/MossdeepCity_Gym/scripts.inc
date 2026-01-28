@@ -59,7 +59,7 @@ MossdeepCity_Gym_EventScript_TateAndLiza::
 	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_Gym_EventScript_TateAndLizaRematch
 	goto_if_unset FLAG_RECEIVED_TM_CALM_MIND, MossdeepCity_Gym_EventScript_GiveCalmMind2
 	msgbox MossdeepCity_Gym_Text_TateAndLizaPostBattle, MSGBOX_DEFAULT
-	call_if_ge MD_GiveZPowerRing
+	call MD_GiveZPowerRing
 	release
 	end
 
@@ -655,7 +655,7 @@ MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons:
 
 MD_GiveZPowerRing::
 	msgbox TateAndLizaGivesMR
-	additem ITEM_Z_POWER_RING
+	giveitem ITEM_Z_POWER_RING
 	closemessage
 	msgbox TateAndLizafinishGiveRing
 	return
