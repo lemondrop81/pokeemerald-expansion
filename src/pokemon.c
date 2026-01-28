@@ -5792,45 +5792,51 @@ u32 GetRelearnerTMMoves(struct Pokemon *mon, u16 *moves)
     u32 learnedMoves[MAX_MON_MOVES] = {0};
     u32 numMoves = 0;
     u32 species = GetMonData(mon, MON_DATA_SPECIES);
-    u16 allMoves[NUM_ALL_MACHINES];
-    u32 totalMoveCount = 0;
-
-    for (u32 i = 0; i < NUM_ALL_MACHINES; i++)
-    {
-        enum TMHMItemId item = GetTMHMItemId(i + 1);
-        u32 move = GetTMHMMoveId(i + 1);
-
-        if (move == MOVE_NONE)
-            continue;
-
-        if ((P_ENABLE_ALL_TM_MOVES || CheckBagHasItem(item, 1)) && CanLearnTeachableMove(species, move) && move != MOVE_NONE)
-            allMoves[totalMoveCount++] = move;
-    }
 
     for (u32 i = 0; i < MAX_MON_MOVES; i++)
         learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
 
-    for (u32 i = 0; i < totalMoveCount; i++)
+    do
     {
-        u32 j;
-        for (j = 0; j < MAX_MON_MOVES; j++)
-        {
-            if (learnedMoves[j] == allMoves[i])
-                break;
-        }
-        if (j < MAX_MON_MOVES)
-            continue;
+        u16 allMoves[NUM_ALL_MACHINES];
+        u32 totalMoveCount = 0;
 
-        for (j = 0; j < numMoves; j++)
+        for (u32 i = 0; i < NUM_ALL_MACHINES; i++)
         {
-            if (moves[j] == allMoves[i])
-                break;
-        }
-        if (j < numMoves)
-            continue;
+            enum TMHMItemId item = GetTMHMItemId(i + 1);
+            u32 move = GetTMHMMoveId(i + 1);
 
-        moves[numMoves++] = allMoves[i];
-    }
+            if (move == MOVE_NONE)
+                continue;
+
+            if ((P_ENABLE_ALL_TM_MOVES || CheckBagHasItem(item, 1)) && CanLearnTeachableMove(species, move) && move != MOVE_NONE)
+                allMoves[totalMoveCount++] = move;
+        }
+
+        for (u32 i = 0; i < totalMoveCount; i++)
+        {
+            u32 j;
+            for (j = 0; j < MAX_MON_MOVES; j++)
+            {
+                if (learnedMoves[j] == allMoves[i])
+                    break;
+            }
+            if (j < MAX_MON_MOVES)
+                continue;
+
+            for (j = 0; j < numMoves; j++)
+            {
+                if (moves[j] == allMoves[i])
+                    break;
+            }
+            if (j < numMoves)
+                continue;
+
+            moves[numMoves++] = allMoves[i];
+        }
+
+        species = (P_PRE_EVO_MOVES ? GetSpeciesPreEvolution(species) : SPECIES_NONE);
+    } while (species != SPECIES_NONE);
 
     if (P_SORT_MOVES)
         SortMovesAlphabetically(moves, numMoves);
@@ -5851,32 +5857,37 @@ u32 GetRelearnerTutorMoves(struct Pokemon *mon, u16 *moves)
     for (u32 i = 0; i < MAX_MON_MOVES; i++)
         learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
 
-    for (u32 i = 0; gTutorMoves[i] != MOVE_UNAVAILABLE; i++)
+    do
     {
-        u32 move = gTutorMoves[i];
-
-        if (!CanLearnTeachableMove(species, move))
-            continue;
-
-        u32 j;
-        for (j = 0; j < MAX_MON_MOVES; j++)
+        for (u32 i = 0; gTutorMoves[i] != MOVE_UNAVAILABLE; i++)
         {
-            if (learnedMoves[j] == move)
-                break;
-        }
-        if (j < MAX_MON_MOVES)
-            continue;
+            u32 move = gTutorMoves[i];
 
-        for (j = 0; j < numMoves; j++)
-        {
-            if (moves[j] == move)
-                break;
-        }
-        if (j < numMoves)
-            continue;
+            if (!CanLearnTeachableMove(species, move))
+                continue;
 
-        moves[numMoves++] = move;
-    }
+            u32 j;
+            for (j = 0; j < MAX_MON_MOVES; j++)
+            {
+                if (learnedMoves[j] == move)
+                    break;
+            }
+            if (j < MAX_MON_MOVES)
+                continue;
+
+            for (j = 0; j < numMoves; j++)
+            {
+                if (moves[j] == move)
+                    break;
+            }
+            if (j < numMoves)
+                continue;
+
+            moves[numMoves++] = move;
+        }
+
+        species = (P_PRE_EVO_MOVES ? GetSpeciesPreEvolution(species) : SPECIES_NONE);
+    } while (species != SPECIES_NONE);
 
     if (P_SORT_MOVES)
         SortMovesAlphabetically(moves, numMoves);
