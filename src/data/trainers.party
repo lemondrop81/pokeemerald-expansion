@@ -246,15 +246,15 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Delcatty
+Furret
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Vigoroth
+Dunsparce
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Linoone
+Persian
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4183,7 +4183,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Electrike
+Blitzle
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Quick Attack
@@ -4191,7 +4191,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Spark
 - Leer
 
-Voltorb
+Luxio
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Charge
@@ -4253,11 +4253,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Voltorb
+Joltik
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Electrike
+Flaaffy
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4270,7 +4270,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Manectric
+Zebstrika
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4287,11 +4287,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
+Rotom
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wingull
+Pikachu
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4388,7 +4388,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Numel
+Torkoal
 Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4401,7 +4401,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
+Heatmor
 Level: 22
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4418,7 +4418,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Numel
+Torracat
 Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4431,7 +4431,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
+Pignite
 Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4444,7 +4444,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
+Quilava
 Level: 23
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
@@ -4457,7 +4457,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
+Braixen
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4542,7 +4542,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Phanpy
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Dig
@@ -4567,7 +4567,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Psybeam
 - Rock Tomb
 
-Sandshrew
+Diggersby
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Poison Sting
@@ -4575,7 +4575,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Scratch
 - Dig
 
-Baltoy
+Clodsire
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Rapid Spin
@@ -4592,7 +4592,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Nuzleaf
+Raticate
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4605,11 +4605,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Krokorok
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Nuzleaf
+Sneasel
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4622,7 +4622,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Kecleon
+Carkol
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4635,11 +4635,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon
+Lickitung
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Spinda
+Porygon
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -7399,15 +7399,15 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Dratini
+Squirtle
 Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Lapras
+Froakie
 Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Omanyte
+Piplup
 Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9060,7 +9060,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
+Crabrawler
 Level: 13
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
@@ -9073,7 +9073,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
+Scraggy
 Level: 13
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -9086,11 +9086,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
+Pignite
 Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Makuhita
+Hitmontop
 Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -9103,7 +9103,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
+Primeape
 Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -9116,7 +9116,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Breloom
+Hitmonlee
 Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -11308,23 +11308,23 @@ Whismur
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zigzagoon
+Aipom
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Aron
+Cranidos
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Poochyena
+Zorua
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Taillow
+Pidove
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Makuhita
+Pancham
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11511,23 +11511,23 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
+Bramblin
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Shroomish
+Foongus
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Marill
+Shellder
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Roselia
+Kubfu
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Skitty
+Tadbulb
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12066,7 +12066,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
+Monferno
 Level: 13
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -13518,21 +13518,13 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
+Mankey
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bide
-- Detect
-- Confusion
-- Thunder Punch
 
-Meditite
+Croagunk
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Thunder Punch
-- Detect
-- Confusion
-- Meditate
 
 === TRAINER_DANIELLE ===
 Name: DANIELLE
@@ -13543,13 +13535,9 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
+Pancham
 Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bide
-- Detect
-- Confusion
-- Fire Punch
 
 === TRAINER_HIDEO ===
 Name: HIDEO
@@ -13619,11 +13607,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Swellow
+Staraptor
 Level: 29
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Xatu
+Dubwool
 Level: 29
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -14712,11 +14700,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Electrike
+Elekid
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Voltorb
+Chinchou
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -14742,7 +14730,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Voltorb
+Tynamo
 Level: 15
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -14768,7 +14756,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Durant
 Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -14811,7 +14799,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Numel
+Litleo
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -14870,11 +14858,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Baltoy
+Klang
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Sandshrew
+Perrserker
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -15499,7 +15487,7 @@ Swellow
 Level: 24
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Sceptile
+Grovyle
 Level: 24
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -15571,11 +15559,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Taillow
+Rellor
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Nuzleaf
+Skorupi
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -15588,11 +15576,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Numel
+Magmar
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Slugma
+Larvesta
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -15681,11 +15669,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
+Breloom
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Makuhita
+Grapploct
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -15775,7 +15763,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
+Riolu
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -15806,7 +15794,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Manectric
+Electabuzz
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -15819,11 +15807,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
+Raboot
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Numel
+Castform
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -15850,11 +15838,7 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Manectric
-Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Sceptile
+Grovyle
 Level: 30
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -15862,7 +15846,7 @@ Starmie
 Level: 30
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Dragonair
+Goomy
 Level: 30
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -15875,11 +15859,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
+Stufful
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Makuhita
+Falinks
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -15917,19 +15901,19 @@ Wingull
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Tropius
+Ivysaur
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Zigzagoon
+Stantler
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Electrike
+Vikavolt
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Numel
+Heatmor
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -15942,19 +15926,19 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
+Sawsbuck
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Shroomish
+Bayleef
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Electrike
+Boltund
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Marill
+Shellos
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -15962,7 +15946,7 @@ Sandshrew
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Gulpin
+Toxicroak
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
