@@ -5551,6 +5551,7 @@ Mugshot: Pink
 
 Arctozolt @ Life Orb
 Level: 61
+Ability: SNow Warning
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Freeze-Dry
 - Bolt Beak
@@ -5559,6 +5560,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 Mamoswine @ Assault Vest
 Level: 61
+Ability: Thick Fat
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Rock Tomb
 - Ice Shard
@@ -5567,6 +5569,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 Avalugg @ Heavy-Duty Boots
 Level: 61
+Ability: Ice Body
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Body Press
 - Recover
@@ -5575,6 +5578,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 Abomasnow @ Leftovers
 Level: 62
+Ability: SNow Warning
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Protect
 - Leech Seed
@@ -5583,14 +5587,16 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 Cloyster @ Life Orb
 Level: 63
+Ability: Skill Link
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shell Smash
 - Rock Blast
 - Icicle Spear
-- Rapid Spin
+- Liquidation
 
 Glaceon @ Sitrus Berry
 Level: 64
+Ability: Ice Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Blizzard
 - Shadow Ball
@@ -5610,6 +5616,7 @@ Mugshot: Blue
 
 Dragonite @ Heavy-Duty Boots
 Level: 65
+Ability: Multi Scale
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Extreme Speed
 - Dragon Claw
@@ -5618,6 +5625,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 Garchomp @ Rocky Helmet
 Level: 65
+Ability: Rough Skin
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Earthquake
 - Dragon Tail
@@ -5650,6 +5658,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Goodra @ Leftovers
 Level: 65
+Ability: Hydration
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Heavy Slam
 - Knock Off
@@ -7280,52 +7289,58 @@ AI: Basic Trainer
 Mugshot: Yellow
 
 Pelipper @ Damp Rock
-Level: 57
+Level: 67
+Ability: Drizzle
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
+- Scald
 - Hurricane
 - U-turn
 - Roost
 
-Whiscash @ Sitrus Berry
-Level: 55
+Golduck @ Choice Specs
+Level: 67
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Hydro Pump
+- Ice Beam
+- Psychic
+
+Ludicolo @ Life Orb
+Level: 67
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Weather Ball
+- Energy Ball
+- Ice Beam
+- Focus Blast
+
+Barraskewda @ Choice Band
+Level: 67
+Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Liquidation
-- Psychic Fangs
-- Close Combat
-- Aqua Jet
+- CLose Combat
+- Poison Jab
+- Zen Headbutt
 
-Whiscash @ Sitrus Berry
-Level: 56
+Kabutops @ Choice Band
+Level: 67
+Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
-- Surf
-- Leech Seed
-- Double Team
+- Liquidation
+- Rock Slide
+- Leech Life
+- Superpower
 
-Whiscash @ Sitrus Berry
-Level: 56
+Swampert @ Swampertite
+Level: 70
+Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Waterfall
 - Earthquake
-- Surf
-- Amnesia
-- Hyper Beam
-
-Gyarados @ Sitrus Berry
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Dance
-- Earthquake
-- Hyper Beam
-- Surf
-
-Milotic @ Sitrus Berry
-Level: 58
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Recover
-- Surf
-- Ice Beam
-- Toxic
+- Superpower
+- Ice Punch
 
 === TRAINER_ANDREW ===
 Name: ANDREW
