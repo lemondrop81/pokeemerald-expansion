@@ -1,6 +1,7 @@
 #include "global.h"
 #include "string_util.h"
 #include "test/test.h"
+#include "daycare.h"
 #include "constants/form_change_types.h"
 
 TEST("Form species ID tables are shared between all forms")

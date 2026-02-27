@@ -1600,3 +1600,53 @@ static u8 ModifyBreedingScoreForOvalCharm(u8 score)
 
     return score;
 }
+
+u16 GetRandomSpecies(u8 selection)
+{
+    // The original code only returned a random species when the player
+    // picked the last (fourth) choice; the first three options are the normal
+    // starters.  Preserve that behaviour rather than introducing a new
+    // constant dependency.
+    if (selection < 3)
+        return 0;
+
+    // Choose a random starting index in the species table so the species
+    // returned aren't always clustered at the beginning.
+    u16 start = (Random() % (NUM_SPECIES - 1)) + 1; // 1..NUM_SPECIES-1
+    u16 species = SPECIES_NONE;
+
+    // Walk the species list once, wrapping around, and apply the same
+    // filters the previous implementation attempted (has an evolution and a
+    // modest base stat total).  This avoids returning literally every
+    // species, which could be undesirable in a starter selection.
+    for (u16 i = 0; i < NUM_SPECIES - 1; i++)
+    {
+        u16 s = start + i;
+        if (s >= NUM_SPECIES)
+            s -= (NUM_SPECIES - 1);
+
+        // skip species with no evolution
+        const struct Evolution *evo = GetSpeciesEvolutions(s);
+        if (evo == NULL || evo[0].targetSpecies == 0)
+            continue;
+
+        // limit to relatively weak mons (<= 360 BST)
+        u32 bst = gSpeciesInfo[s].baseHP
+                + gSpeciesInfo[s].baseAttack
+                + gSpeciesInfo[s].baseDefense
+                + gSpeciesInfo[s].baseSpeed
+                + gSpeciesInfo[s].baseSpAttack
+                + gSpeciesInfo[s].baseSpDefense;
+        if (bst > 360)
+            continue;
+
+        species = s;
+        break;
+    }
+
+    // If we somehow didn't find a match, fall back to Bulbasaur (species 1).
+    if (species == SPECIES_NONE)
+        species = SPECIES_BULBASAUR;
+
+    return species;
+}

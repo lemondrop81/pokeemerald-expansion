@@ -23,8 +23,13 @@
 #include "window.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
+#include "daycare.h"
+#include "random.h"
 
-#define STARTER_MON_COUNT   3
+// placeholder text used when the random slot has not been generated yet
+static const u8 sText_UnknownMon[] = _("?????");
+
+#define STARTER_MON_COUNT   4
 
 // Position of the sprite of the selected starter Pokémon
 #define STARTER_PKMN_POS_X (DISPLAY_WIDTH / 2)
@@ -48,6 +53,7 @@ static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y);
 static void SpriteCB_SelectionHand(struct Sprite *sprite);
 static void SpriteCB_Pokeball(struct Sprite *sprite);
 static void SpriteCB_StarterPokemon(struct Sprite *sprite);
+static u16 randomSpecies;
 
 static u16 sStarterLabelWindowId;
 
@@ -99,7 +105,8 @@ static const struct WindowTemplate sWindowTemplate_StarterLabel =
 static const u8 sPokeballCoords[STARTER_MON_COUNT][2] =
 {
     {60, 64},
-    {120, 88},
+    {100, 88},
+    {140, 88},
     {180, 64},
 };
 
@@ -107,7 +114,8 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
 {
     {0, 9},
     {16, 10},
-    {8, 4},
+    {1, 10},
+    {16, 9},
 };
 
 static const u16 sStarterMon[STARTER_MON_COUNT] =
@@ -115,6 +123,7 @@ static const u16 sStarterMon[STARTER_MON_COUNT] =
     SPECIES_TREECKO,
     SPECIES_TORCHIC,
     SPECIES_MUDKIP,
+    SPECIES_UNOWN,
 };
 
 static const struct BgTemplate sBgTemplates[3] =
@@ -204,7 +213,8 @@ static const struct OamData sOam_StarterCircle =
 static const u8 sCursorCoords[][2] =
 {
     {60, 32},
-    {120, 56},
+    {100, 56},
+    {140, 56},
     {180, 32},
 };
 
@@ -350,6 +360,9 @@ static const struct SpriteTemplate sSpriteTemplate_StarterCircle =
 // .text
 u16 GetStarterPokemon(u16 chosenStarterId)
 {
+    if (randomSpecies != 0)
+        return randomSpecies;
+
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
     return sStarterMon[chosenStarterId];
@@ -440,7 +453,7 @@ void CB2_ChooseStarter(void)
     ShowBg(3);
 
     taskId = CreateTask(Task_StarterChoose, 0);
-    gTasks[taskId].tStarterSelection = 1;
+    gTasks[taskId].tStarterSelection = 0;
 
     // Create hand sprite
     spriteId = CreateSprite(&sSpriteTemplate_Hand, 120, 56, 2);
@@ -458,6 +471,10 @@ void CB2_ChooseStarter(void)
     spriteId = CreateSprite(&sSpriteTemplate_Pokeball, sPokeballCoords[2][0], sPokeballCoords[2][1], 2);
     gSprites[spriteId].sTaskId = taskId;
     gSprites[spriteId].sBallId = 2;
+
+    spriteId = CreateSprite(&sSpriteTemplate_Pokeball, sPokeballCoords[3][0], sPokeballCoords[3][1], 2);
+    gSprites[spriteId].sTaskId = taskId;
+    gSprites[spriteId].sBallId = 3;
 
     sStarterLabelWindowId = WINDOW_NONE;
 }
@@ -496,6 +513,7 @@ static void Task_HandleStarterChooseInput(u8 taskId)
         gTasks[taskId].tCircleSpriteId = spriteId;
 
         // Create Pokémon sprite
+        randomSpecies = GetRandomSpecies(selection);
         spriteId = CreatePokemonFrontSprite(GetStarterPokemon(gTasks[taskId].tStarterSelection), sPokeballCoords[selection][0], sPokeballCoords[selection][1]);
         gSprites[spriteId].affineAnims = &sAffineAnims_StarterPokemon;
         gSprites[spriteId].callback = SpriteCB_StarterPokemon;
@@ -544,6 +562,7 @@ static void Task_HandleConfirmStarterInput(u8 taskId)
     case 0:  // YES
         // Return the starter choice and exit.
         gSpecialVar_Result = gTasks[taskId].tStarterSelection;
+        if (gSpecialVar_Result == 3) { gSpecialVar_Result = Random() % 3; }
         ResetAllPicSprites();
         SetMainCallback2(gMain.savedCallback);
         break;
@@ -575,9 +594,17 @@ static void CreateStarterPokemonLabel(u8 selection)
     s32 width;
     u8 labelLeft, labelRight, labelTop, labelBottom;
 
-    u16 species = GetStarterPokemon(selection);
-    CopyMonCategoryText(species, categoryText);
-    speciesName = GetSpeciesName(species);
+    if (selection == 3)
+    {
+		CopyMonCategoryText(SpeciesToNationalPokedexNum(NATIONAL_DEX_NONE), categoryText);
+        speciesName = sText_UnknownMon;
+    }
+	else
+	{
+		u16 species = GetStarterPokemon(selection);
+        CopyMonCategoryText(SpeciesToNationalPokedexNum(species), categoryText);
+        speciesName = GetSpeciesName(species);
+	}
 
     winTemplate = sWindowTemplate_StarterLabel;
     winTemplate.tilemapLeft = sStarterLabelCoords[selection][0];
