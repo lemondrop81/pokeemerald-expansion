@@ -1296,6 +1296,17 @@ enum MoveComparisonResult AI_WhichMoveBetter(u32 move1, u32 move2, u32 battlerAt
     enum Ability defAbility = gAiLogicData->abilities[battlerDef];
     enum Ability atkAbility = gAiLogicData->abilities[battlerAtk];
 
+    // Check if physical moves hurt or heal.
+    if (atkAbility == ABILITY_VAMPIRIC)
+    {
+        bool32 moveContact1 = MoveMakesContact(move1);
+        bool32 moveContact2 = MoveMakesContact(move2);
+        if (moveContact1 && !moveContact2)
+            return MOVE_WON_COMPARISON;
+        if (moveContact2 && !moveContact1)
+            return MOVE_LOST_COMPARISON;
+    }
+
     // Check if physical moves hurt.
     if (gAiLogicData->holdEffects[battlerAtk] != HOLD_EFFECT_PROTECTIVE_PADS && atkAbility != ABILITY_LONG_REACH
         && (gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_ROCKY_HELMET

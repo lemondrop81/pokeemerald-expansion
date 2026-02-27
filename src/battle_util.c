@@ -5410,6 +5410,29 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 effect++;
             }
             break;
+        case ABILITY_VAMPIRIC:
+            if (IsBattlerAlive(gBattlerTarget)
+             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+             && IsBattlerTurnDamaged(gBattlerTarget)
+             && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker), move))
+            {
+                if (!gBattleMons[gBattlerAttacker].volatiles.healBlock)
+                {
+                    s32 heal = gBattleStruct->moveDamage[gBattlerTarget] / 4;
+                    if (heal == 0)
+                        heal = 1;
+                    SetPassiveDamageAmount(gBattlerAttacker, -heal);
+                    /* manual write to avoid converting 311 to u8 in macro */
+                    gBattleTextBuff1[0] = B_BUFF_PLACEHOLDER_BEGIN;
+                    gBattleTextBuff1[1] = B_BUFF_ABILITY;
+                    gBattleTextBuff1[2] = ABILITY_VAMPIRIC & 0xFF;
+                    gBattleTextBuff1[3] = (ABILITY_VAMPIRIC & 0xFF00) >> 8;
+                    gBattleTextBuff1[4] = B_BUFF_EOS;
+                    BattleScriptCall(BattleScript_IceBodyHeal);
+                    effect++;
+                }
+            }
+            break;
         case ABILITY_GULP_MISSILE:
             if ((gBattleMons[gBattlerAttacker].species == SPECIES_CRAMORANT)
              && ((gCurrentMove == MOVE_SURF && IsBattlerTurnDamaged(gBattlerTarget)) || gBattleMons[gBattlerAttacker].volatiles.semiInvulnerable == STATE_UNDERWATER)

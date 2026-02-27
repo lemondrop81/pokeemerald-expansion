@@ -191,6 +191,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
     },
 
+    [ABILITY_VAMPIRIC] =
+    {
+        .name = _("Vampiric"),
+        .description = COMPOUND_STRING("Recovers 25% of damage dealt by contact moves."),
+        .aiRating = 4,
+    },
+
     [ABILITY_WONDER_GUARD] =
     {
         .name = _("Wonder Guard"),
