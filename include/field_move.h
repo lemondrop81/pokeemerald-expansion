@@ -14,6 +14,11 @@ struct FieldMoveInfo
 
 extern const struct FieldMoveInfo gFieldMoveInfo[];
 
+// Allows other modules to query whether the party contains a species capable of
+// learning the given move.  Mirrors the static helper used internally by
+// field_move.c.
+bool32 PartyCanLearnMove(u16 move);
+
 static inline bool32 SetUpFieldMove(enum FieldMove fieldMove)
 {
     return gFieldMoveInfo[fieldMove].fieldMoveFunc();
