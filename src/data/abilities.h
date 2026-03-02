@@ -305,6 +305,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 10,
     },
 
+    [ABILITY_ATHENIAN] =
+    {
+        .name = _("Athenian"),
+        .description = COMPOUND_STRING("Raises Special Attack."),
+        .aiRating = 10,
+    },
+
     [ABILITY_POISON_POINT] =
     {
         .name = _("Poison Point"),

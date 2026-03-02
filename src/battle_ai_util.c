@@ -6086,6 +6086,10 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, enum Ability ability, struct Ai
         if (HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL))
             return BEST_EFFECT;
         break;
+    case ABILITY_ATHENIAN:
+        if (HasMoveWithCategory(battler, DAMAGE_CATEGORY_SPECIAL))
+            return BEST_EFFECT;
+        break;
     // Also used to Worry Seed WORRY_SEED
     case ABILITY_INSOMNIA:
     case ABILITY_VITAL_SPIRIT:
