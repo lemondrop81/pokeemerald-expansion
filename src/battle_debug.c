@@ -401,6 +401,7 @@ static const struct ListMenuItem sHazardsListItems[] =
     {COMPOUND_STRING("Sticky Web"),   LIST_SIDE_STICKY_WEB},
     {COMPOUND_STRING("Toxic Spikes"), LIST_SIDE_TOXIC_SPIKES},
     {COMPOUND_STRING("Stealth Rock"), LIST_SIDE_STEALTH_ROCK},
+    {COMPOUND_STRING("Foundry Rock"), LIST_SIDE_STEALTH_ROCK}, // treated same slot for debugging
     {COMPOUND_STRING("Steelsurge"),   LIST_SIDE_STEELSURGE},
 };
 
@@ -1725,6 +1726,7 @@ static void ChangeHazardsValue(struct BattleDebugMenu *data)
             PushHazardTypeToQueue(side, HAZARDS_STEALTH_ROCK);
         else if (data->modifyArrows.currValue == 0)
             RemoveHazardFromField(side, HAZARDS_STEALTH_ROCK);
+            RemoveHazardFromField(side, HAZARDS_FOUNDRY_ROCK); // ensure both variants cleared
         break;
     case LIST_SIDE_STEELSURGE:
         if (data->modifyArrows.currValue > 0)

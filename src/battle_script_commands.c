@@ -3555,7 +3555,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
         }
         break;
     case MOVE_EFFECT_STEALTH_ROCK:
-        if (!IsHazardOnSide(GetBattlerSide(gEffectBattler), HAZARDS_STEALTH_ROCK))
+        if (!IsHazardOnSide(GetBattlerSide(gEffectBattler), HAZARDS_STEALTH_ROCK) && !IsHazardOnSide(GetBattlerSide(gEffectBattler), HAZARDS_FOUNDRY_ROCK))
         {
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_POINTEDSTONESFLOAT;
             BattleScriptPush(battleScript);
@@ -6018,7 +6018,7 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
         }
         break;
     case EFFECT_STONE_AXE:
-        if (!IsHazardOnSide(side, HAZARDS_STEALTH_ROCK)
+        if (!IsHazardOnSide(side, HAZARDS_STEALTH_ROCK) && !IsHazardOnSide(side, HAZARDS_FOUNDRY_ROCK)
          && IsBattlerTurnDamaged(gBattlerTarget)
          && IsBattlerAlive(gBattlerAttacker))
         {
@@ -7941,9 +7941,11 @@ void TryHazardsOnSwitchIn(u32 battler, u32 side, enum Hazards hazardType)
         }
         break;
     case HAZARDS_STEALTH_ROCK:
+    case HAZARDS_FOUNDRY_ROCK:
         if (IsBattlerAffectedByHazards(battler, FALSE) && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
         {
-            gBattleStruct->passiveHpUpdate[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_POINTED_STONES, battler);
+            enum TypeSideHazard atkType = (hazardType == HAZARDS_FOUNDRY_ROCK) ? TYPE_FIRE : TYPE_SIDE_HAZARD_POINTED_STONES;
+            gBattleStruct->passiveHpUpdate[battler] = GetStealthHazardDamage(atkType, battler);
             if (gBattleStruct->passiveHpUpdate[battler] != 0)
                 SetDmgHazardsBattlescript(battler, B_MSG_STEALTHROCKDMG);
         }
@@ -13073,13 +13075,20 @@ static void Cmd_setstealthrock(void)
     CMD_ARGS(const u8 *failInstr);
 
     u8 targetSide = GetBattlerSide(gBattlerTarget);
-    if (IsHazardOnSide(targetSide, HAZARDS_STEALTH_ROCK))
+    // treat Foundry hazard as same as stealth rock for existence check
+    if (IsHazardOnSide(targetSide, HAZARDS_STEALTH_ROCK) || IsHazardOnSide(targetSide, HAZARDS_FOUNDRY_ROCK)
+     || IsHazardOnSide(targetSide, HAZARDS_FOUNDRY_ROCK))
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }
     else
     {
-        PushHazardTypeToQueue(targetSide, HAZARDS_STEALTH_ROCK);
+        enum Ability atkAbil = GetBattlerAbility(gBattlerAttacker);
+        if (atkAbil == ABILITY_FOUNDRY)
+            PushHazardTypeToQueue(targetSide, HAZARDS_FOUNDRY_ROCK);
+        else
+            // pushing handled earlier with ability check in modified Cmd_setstealthrock
+            PushHazardTypeToQueue(targetSide, (GetBattlerAbility(gBattlerAttacker) == ABILITY_FOUNDRY) ? HAZARDS_FOUNDRY_ROCK : HAZARDS_STEALTH_ROCK);
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
 }

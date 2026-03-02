@@ -191,6 +191,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
     },
 
+    [ABILITY_FOUNDRY] =
+    {
+        .name = _("Foundry"),
+        .description = COMPOUND_STRING("Rock moves become Fire-type and get a 30% boost.\nTurns Stealth Rock into a Fire hazard."),
+        .aiRating = 7,
+    },
+
     [ABILITY_VAMPIRIC] =
     {
         .name = _("Vampiric"),

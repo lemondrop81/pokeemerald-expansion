@@ -3310,8 +3310,11 @@ static bool32 PartyBattlerShouldAvoidHazards(u32 currBattler, u32 switchBattler)
     if (holdEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS)
         return FALSE;
 
-    if (IsHazardOnSide(side, HAZARDS_STEALTH_ROCK))
-        hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_POINTED_STONES, type1, type2, maxHp);
+    if (IsHazardOnSide(side, HAZARDS_STEALTH_ROCK) || IsHazardOnSide(side, HAZARDS_FOUNDRY_ROCK))
+    {
+        enum TypeSideHazard atkType = IsHazardOnSide(side, HAZARDS_FOUNDRY_ROCK) ? TYPE_FIRE : TYPE_SIDE_HAZARD_POINTED_STONES;
+        hazardDamage += GetStealthHazardDamageByTypesAndHP(atkType, type1, type2, maxHp);
+    }
     if (IsHazardOnSide(side, HAZARDS_STEELSURGE))
         hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_SHARP_STEEL, type1, type2, maxHp);
 

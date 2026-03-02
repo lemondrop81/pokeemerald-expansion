@@ -306,6 +306,7 @@ enum Hazards
     HAZARDS_STICKY_WEB,
     HAZARDS_TOXIC_SPIKES,
     HAZARDS_STEALTH_ROCK,
+    HAZARDS_FOUNDRY_ROCK, // fire-version of Stealth Rock placed by Foundry
     HAZARDS_STEELSURGE,
     HAZARDS_MAX_COUNT,
 };

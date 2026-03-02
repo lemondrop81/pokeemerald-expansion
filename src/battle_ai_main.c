@@ -1873,7 +1873,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             break;
         case EFFECT_STEALTH_ROCK:
             if (IsHazardOnSide(GetBattlerSide(battlerDef), HAZARDS_STEALTH_ROCK)
-              || PartnerMoveIsSameNoTarget(BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove)) //Only one mon needs to set up Stealth Rocks
+             || IsHazardOnSide(GetBattlerSide(battlerDef), HAZARDS_FOUNDRY_ROCK)
+             || PartnerMoveIsSameNoTarget(BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove)) //Only one mon needs to set up Stealth Rocks
                 ADJUST_SCORE(-10);
             break;
         case EFFECT_TOXIC_SPIKES:
@@ -6614,6 +6615,7 @@ bool32 DoesSideHaveDamagingHazards(u32 side)
         case HAZARDS_SPIKES:
         case HAZARDS_TOXIC_SPIKES:
         case HAZARDS_STEALTH_ROCK:
+        case HAZARDS_FOUNDRY_ROCK:
         case HAZARDS_STEELSURGE:
             return TRUE;
         default:

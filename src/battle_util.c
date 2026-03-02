@@ -7461,6 +7461,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (moveType == TYPE_ICE && gBattleStruct->battlerState[battlerAtk].ateBoost)
             modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
         break;
+    case ABILITY_FOUNDRY:
+        if (moveType == TYPE_FIRE && gBattleStruct->battlerState[battlerAtk].ateBoost)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
     case ABILITY_AERILATE:
         if (moveType == TYPE_FLYING && gBattleStruct->battlerState[battlerAtk].ateBoost)
             modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
@@ -10774,7 +10778,9 @@ void RemoveHazardFromField(u32 side, enum Hazards hazardType)
     u32 i;
     for (i = 0; i < HAZARDS_MAX_COUNT; i++)
     {
-        if (gBattleStruct->hazardsQueue[side][i] == hazardType)
+        if (gBattleStruct->hazardsQueue[side][i] == hazardType
+         || (hazardType == HAZARDS_STEALTH_ROCK && gBattleStruct->hazardsQueue[side][i] == HAZARDS_FOUNDRY_ROCK)
+         || (hazardType == HAZARDS_FOUNDRY_ROCK && gBattleStruct->hazardsQueue[side][i] == HAZARDS_STEALTH_ROCK))
         {
             gBattleStruct->hazardsQueue[side][i] = HAZARDS_NONE;
             gBattleStruct->numHazards[side]--;
