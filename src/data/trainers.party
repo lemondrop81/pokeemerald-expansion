@@ -5675,12 +5675,12 @@ Items: Potion / Potion
 Double Battle: No
 AI: Basic Trainer
 
-Silicobra @ Oran Berry
+Bonsly @ Oran Berry
 Level: 12
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
+- Copycat
 - Sand Attack
-- Brutal Swing
+- Fake Tears
 - Rock Tomb
 
 Dwebble @ Oran Berry
@@ -5697,14 +5697,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Tackle
 - Defense Curl
 - Rock Throw
-- Rock Tomb
-
-Growlithe @ Oran Berry
-Level: 14
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Flame Wheel
-- Bite
-- Double Kick
 - Rock Tomb
 
 Drilbur @ Oran Berry
