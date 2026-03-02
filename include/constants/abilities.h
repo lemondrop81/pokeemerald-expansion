@@ -333,6 +333,7 @@ enum __attribute__((packed)) Ability
     ABILITY_TERAFORM_ZERO = 309,
     ABILITY_POISON_PUPPETEER = 310,
     ABILITY_ATHENIAN,         // special‑attack analogue of Huge Power
+    ABILITY_AMPLIFIER,        // boosts power of sound moves
     ABILITY_FOUNDRY,          // converts Rock moves to Fire and boosts them
     ABILITY_VAMPIRIC,
     ABILITIES_COUNT_GEN9,

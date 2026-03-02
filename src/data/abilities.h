@@ -1881,6 +1881,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 
+    [ABILITY_AMPLIFIER] =
+    {
+        .name = _("Amplifier"),
+        .description = COMPOUND_STRING("Boosts sound moves."),
+        .aiRating = 2,
+    },
+
     [ABILITY_SAND_SPIT] =
     {
         .name = _("Sand Spit"),

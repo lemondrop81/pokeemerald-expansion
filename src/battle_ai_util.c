@@ -2428,6 +2428,19 @@ bool32 HasMoveWithCategory(u32 battler, enum DamageCategory category)
     return FALSE;
 }
 
+bool32 HasSoundMove(u32 battler)
+{
+    u32 i;
+    u16 *moves = GetMovesArray(battler);
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (moves[i] != MOVE_NONE && moves[i] != MOVE_UNAVAILABLE && IsSoundMove(moves[i]))
+            return TRUE;
+    }
+    return FALSE;
+}
+
 bool32 HasMoveWithType(u32 battler, enum Type type)
 {
     s32 i;
@@ -6084,6 +6097,10 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, enum Ability ability, struct Ai
     case ABILITY_HUGE_POWER:
     case ABILITY_PURE_POWER:
         if (HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL))
+            return BEST_EFFECT;
+        break;
+    case ABILITY_AMPLIFIER:
+        if (HasSoundMove(battler))
             return BEST_EFFECT;
         break;
     case ABILITY_ATHENIAN:
