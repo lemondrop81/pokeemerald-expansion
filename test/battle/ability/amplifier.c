@@ -30,6 +30,20 @@ SINGLE_BATTLE_TEST("Amplifier boosts sound moves by 25%", s16 damage)
     }
 }
 
+SINGLE_BATTLE_TEST("Amplifier works on a sound user like Exploud", s16 damage)
+{
+    GIVEN {
+        PLAYER(SPECIES_EXPLOUD) { Ability(ABILITY_AMPLIFIER); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, MOVE_BOOMBURST); }
+    } SCENE {
+        HP_BAR(opponent, captureDamage: &damage);
+    } FINALLY {
+        EXPECT_GT(damage, 0);
+    }
+}
+
 SINGLE_BATTLE_TEST("Amplifier does not affect non-sound moves")
 {
     GIVEN {
