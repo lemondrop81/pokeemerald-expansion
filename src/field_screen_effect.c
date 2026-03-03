@@ -44,9 +44,20 @@
 #include "fldeff.h"
 #include "battle.h"
 
+#include <stdint.h>
+
+// item description header that should be shown on return to field
+extern u16 gLastBattleItemObtained;
+
+// forward declare the natives we use
+void ScriptShowItemDescription(struct ScriptContext *ctx);
+void ScriptHideItemDescription(struct ScriptContext *ctx);
+
+
 static void Task_ExitNonAnimDoor(u8);
 static void Task_ExitNonDoor(u8);
 static void Task_DoContestHallWarp(u8);
+static void Task_HideDroppedItemDescription(u8);
 static void FillPalBufferWhite(void);
 static void Task_ExitDoor(u8);
 static bool32 WaitForWeatherFadeIn(void);
@@ -151,6 +162,41 @@ static void Task_WaitForFadeAndEnableScriptCtx(u8 taskID)
     {
         DestroyTask(taskID);
         ScriptContext_Enable();
+
+        // if a wild monster dropped an item we haven't seen before,
+        // show the description header and wait for a button press to hide it
+        if (gLastBattleItemObtained != ITEM_NONE)
+        {
+            u16 item = gLastBattleItemObtained;
+            gSpecialVar_0x8006 = item;
+
+            // show header (headerType = 0 for normal item)
+            {
+                u8 headerType = 0;
+                struct ScriptContext ctx;
+                ctx.scriptPtr = &headerType;
+                ScriptShowItemDescription(&ctx);
+            }
+
+            // create a task that will hide the description when the player
+            // presses A or B; the task will also mark the item as obtained
+            s16 taskId = CreateTask(Task_HideDroppedItemDescription, 0);
+            gTasks[taskId].data[1] = item;
+
+            gLastBattleItemObtained = ITEM_NONE;
+        }
+    }
+}
+
+// wait for the player to press A/B, then hide and mark the item obtained
+static void Task_HideDroppedItemDescription(u8 taskId)
+{
+    if (JOY_NEW(A_BUTTON | B_BUTTON))
+    {
+        u16 item = gTasks[taskId].data[1];
+        ScriptHideItemDescription(NULL);
+        GetSetItemObtained(item, FLAG_SET_ITEM_OBTAINED);
+        DestroyTask(taskId);
     }
 }
 

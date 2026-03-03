@@ -4872,9 +4872,20 @@ static void Cmd_getexp(void)
     case 7: // add dropped item to bag if space available
         if (CheckBagHasSpace(gBattleMons[gBattlerFainted].item, 1) == TRUE)
         {
-            AddBagItem(gBattleMons[gBattlerFainted].item, 1);
-            PREPARE_ITEM_BUFFER(gBattleTextBuff1, gBattleMons[gBattlerFainted].item);
-            PREPARE_POCKET_BUFFER(gBattleTextBuff2, gBattleMons[gBattlerFainted].item);
+            u16 item = gBattleMons[gBattlerFainted].item;
+            AddBagItem(item, 1);
+
+            // if we haven't shown the description for this item yet, mark it
+            // so that the field callback will show it after the battle
+            if (!GetSetItemObtained(item, FLAG_GET_ITEM_OBTAINED))
+            {
+                // don't mark it yet; we'll set the flag when the header is
+                // hidden on the field so the box actually appears
+                gLastBattleItemObtained = item;
+            }
+
+            PREPARE_ITEM_BUFFER(gBattleTextBuff1, item);
+            PREPARE_POCKET_BUFFER(gBattleTextBuff2, item);
             PrepareStringBattle(STRINGID_ADDEDTOBAG, gBattleStruct->expGetterBattlerId);
             gBattleScripting.getexpState = 8;
         }
