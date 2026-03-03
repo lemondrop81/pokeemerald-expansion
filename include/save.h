@@ -3,10 +3,24 @@
 
 #include "main.h"
 
-// Each 4 KiB flash sector contains 3968 bytes of actual data followed by 116 bytes of SaveBlock3 and then 12 bytes of footer.
-#define SECTOR_DATA_SIZE 3968
-#define SAVE_BLOCK_3_CHUNK_SIZE 116
+/* Each 4 KiB flash sector contains a data area, followed by a chunk of
+ * SaveBlock3 and then a small footer.  The data area shrinks when
+ * SaveBlock3 grows, so we compute it from the chunk size to keep the
+ * total sector size at 0x1000. */
+
+/* Maximum SaveBlock3 payload stored in one sector.  Increase this value
+ * if the structure grows and adjust the data size formula below as
+ * required; the static asserts in src/save.c will verify the layout. */
+#define SAVE_BLOCK_3_CHUNK_SIZE 120
+
+/* Footer at the end of every sector. */
 #define SECTOR_FOOTER_SIZE 12
+
+/* Available bytes for the other save blocks in each sector.  Calculated
+ * so that SECTOR_DATA_SIZE + SAVE_BLOCK_3_CHUNK_SIZE +
+ * SECTOR_FOOTER_SIZE == 0x1000. */
+#define SECTOR_DATA_SIZE (0x1000 - SAVE_BLOCK_3_CHUNK_SIZE - SECTOR_FOOTER_SIZE)
+
 #define SECTOR_SIZE (SECTOR_DATA_SIZE + SAVE_BLOCK_3_CHUNK_SIZE + SECTOR_FOOTER_SIZE)
 
 #define NUM_SAVE_SLOTS 2

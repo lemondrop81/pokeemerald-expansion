@@ -212,6 +212,9 @@ void NewGameInitData(void)
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
     ResetItemFlags();
     ResetDexNav();
+    // give player access to DexNav right away (could be moved to script if you prefer)
+    if (DN_FLAG_DEXNAV_GET != 0)
+        FlagSet(DN_FLAG_DEXNAV_GET);
     ClearFollowerNPCData();
 }
 
