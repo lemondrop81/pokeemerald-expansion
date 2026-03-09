@@ -14,6 +14,8 @@ PetalburgCity_Mart_EventScript_Clerk::
 
 	.align 2
 PetalburgCity_Mart_Pokemart_Basic:
+	.2byte ITEM_ABILITY_CAPSULE	
+	.2byte ITEM_ABILITY_PATCH
 	.2byte ITEM_ADAMANT_MINT
 	.2byte ITEM_BOLD_MINT
 	.2byte ITEM_BRAVE_MINT
