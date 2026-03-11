@@ -1522,15 +1522,20 @@ u8 GetPlayerAvatarGenderByGraphicsId(u16 gfxId)
 
 bool8 PartyHasMonWithSurf(void)
 {
+    // Return true if any party Pokémon currently knows Surf or can learn it.
+    // The latter allows surfing even if the chosen Pokémon hasn't had the HM
+    // taught yet, matching the "can learn" behavior used elsewhere.
     u8 i;
 
     if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
     {
         for (i = 0; i < PARTY_SIZE; i++)
         {
-            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE)
+            u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
+            if (species == SPECIES_NONE)
                 break;
-            if (MonKnowsMove(&gPlayerParty[i], MOVE_SURF))
+            if (MonKnowsMove(&gPlayerParty[i], MOVE_SURF) ||
+                CanLearnTeachableMove(species, MOVE_SURF))
                 return TRUE;
         }
     }

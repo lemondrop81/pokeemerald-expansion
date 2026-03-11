@@ -8,44 +8,67 @@
 #include "constants/moves.h"
 #include "constants/party_menu.h"
 
+// Helper: return TRUE if any Pokémon in the player's party can learn the
+// specified move.  This respects species learnsets, so the field move becomes
+// available whenever a party member is capable of learning it (e.g. via HM/egg
+// move), even if they don't know it yet.
+//
+// This function is exposed via field_move.h for use by the party menu and
+// scripts.
+bool32 PartyCanLearnMove(u16 move)
+{
+    u8 i;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
+        if (species == SPECIES_NONE)
+            break;
+        if (species != SPECIES_EGG && CanLearnTeachableMove(species, move))
+            return TRUE;
+    }
+    return FALSE;
+}
+
 static bool32 IsFieldMoveUnlocked_Cut(void)
 {
-    return FlagGet(FLAG_BADGE01_GET);
+    // Traditional badge check OR any mon knows the HM
+    return FlagGet(FLAG_BADGE01_GET) || PartyCanLearnMove(MOVE_CUT);
 }
 
 static bool32 IsFieldMoveUnlocked_Flash(void)
 {
-    return FlagGet(FLAG_BADGE02_GET);
+    return FlagGet(FLAG_BADGE02_GET) || PartyCanLearnMove(MOVE_FLASH);
 }
 
 static bool32 IsFieldMoveUnlocked_RockSmash(void)
 {
-    return FlagGet(FLAG_BADGE03_GET);
+    return FlagGet(FLAG_BADGE03_GET) || PartyCanLearnMove(MOVE_ROCK_SMASH);
 }
 
 static bool32 IsFieldMoveUnlocked_Strength(void)
 {
-    return FlagGet(FLAG_BADGE04_GET);
+    return FlagGet(FLAG_BADGE04_GET) || PartyCanLearnMove(MOVE_STRENGTH);
 }
 
 static bool32 IsFieldMoveUnlocked_Surf(void)
 {
-    return FlagGet(FLAG_BADGE05_GET);
+    return FlagGet(FLAG_BADGE05_GET) || PartyCanLearnMove(MOVE_SURF);
 }
 
 static bool32 IsFieldMoveUnlocked_Fly(void)
 {
-    return FlagGet(FLAG_BADGE06_GET);
+    return FlagGet(FLAG_BADGE06_GET) || PartyCanLearnMove(MOVE_FLY);
 }
 
 static bool32 IsFieldMoveUnlocked_Dive(void)
 {
-    return FlagGet(FLAG_BADGE07_GET);
+    return FlagGet(FLAG_BADGE07_GET) || PartyCanLearnMove(MOVE_DIVE);
 }
 
 static bool32 IsFieldMoveUnlocked_Waterfall(void)
 {
-    return FlagGet(FLAG_BADGE08_GET);
+    return FlagGet(FLAG_BADGE08_GET) || PartyCanLearnMove(MOVE_WATERFALL);
 }
 
 #if OW_ROCK_CLIMB_FIELD_MOVE == TRUE

@@ -14,10 +14,7 @@ OldaleTown_Mart_EventScript_Clerk::
 
 	.align 2
 OldaleTown_Mart_Pokemart_Basic:
-	.2byte ITEM_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
+	.2byte ITEM_POKE_BALL
 	pokemartlistend
 
 OldaleTown_Mart_ExpandedItems::
@@ -29,10 +26,27 @@ OldaleTown_Mart_ExpandedItems::
 	.align 2
 OldaleTown_Mart_Pokemart_Expanded:
 	.2byte ITEM_POKE_BALL
-	.2byte ITEM_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_PREMIER_BALL
+	.2byte ITEM_HEAL_BALL
+	.2byte ITEM_NET_BALL
+	.2byte ITEM_NEST_BALL
+	.2byte ITEM_DIVE_BALL
+	.2byte ITEM_DUSK_BALL
+	.2byte ITEM_TIMER_BALL
+	.2byte ITEM_QUICK_BALL
+	.2byte ITEM_REPEAT_BALL
+	.2byte ITEM_LUXURY_BALL
+	.2byte ITEM_LEVEL_BALL
+	.2byte ITEM_LURE_BALL
+	.2byte ITEM_MOON_BALL
+	.2byte ITEM_FRIEND_BALL
+	.2byte ITEM_LOVE_BALL
+	.2byte ITEM_FAST_BALL
+	.2byte ITEM_HEAVY_BALL
+	.2byte ITEM_DREAM_BALL
+	.2byte ITEM_CHERISH_BALL
 	pokemartlistend
 
 OldaleTown_Mart_EventScript_Woman::

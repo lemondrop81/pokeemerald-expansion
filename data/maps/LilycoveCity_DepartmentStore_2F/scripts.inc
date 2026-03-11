@@ -25,17 +25,26 @@ LilycoveCity_DepartmentStore_2F_EventScript_ClerkLeft::
 
 	.align 2
 LilycoveCity_DepartmentStore_2F_Pokemart1:
-	.2byte ITEM_POKE_BALL
-	.2byte ITEM_GREAT_BALL
-	.2byte ITEM_ULTRA_BALL
-	.2byte ITEM_ESCAPE_ROPE
-	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_BURN_HEAL
-	.2byte ITEM_ICE_HEAL
-	.2byte ITEM_AWAKENING
-	.2byte ITEM_FLUFFY_TAIL
+	.2byte ITEM_ABSORB_BULB
+	.2byte ITEM_CELL_BATTERY
+	.2byte ITEM_LUMINOUS_MOSS
+	.2byte ITEM_SNOWBALL
+	.2byte ITEM_BRIGHT_POWDER
+	.2byte ITEM_WHITE_HERB
+	.2byte ITEM_QUICK_CLAW
+	.2byte ITEM_SOOTHE_BELL
+	.2byte ITEM_MENTAL_HERB
+	.2byte ITEM_KINGS_ROCK
+	.2byte ITEM_CLEANSE_TAG
+	.2byte ITEM_FOCUS_BAND
+	.2byte ITEM_LUCKY_EGG
+	.2byte ITEM_SCOPE_LENS
+	.2byte ITEM_LEFTOVERS
+	.2byte ITEM_SHELL_BELL
+	.2byte ITEM_WIDE_LENS
+	.2byte ITEM_MUSCLE_BAND
+	.2byte ITEM_WISE_GLASSES
+	.2byte ITEM_EXPERT_BELT
 	pokemartlistend
 
 LilycoveCity_DepartmentStore_2F_EventScript_ClerkRight::
@@ -50,16 +59,22 @@ LilycoveCity_DepartmentStore_2F_EventScript_ClerkRight::
 
 	.align 2
 LilycoveCity_DepartmentStore_2F_Pokemart2:
-	.2byte ITEM_POTION
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_HYPER_POTION
-	.2byte ITEM_MAX_POTION
-	.2byte ITEM_REVIVE
-	.2byte ITEM_REPEL
-	.2byte ITEM_SUPER_REPEL
-	.2byte ITEM_MAX_REPEL
-	.2byte ITEM_WAVE_MAIL
-	.2byte ITEM_MECH_MAIL
+	.2byte ITEM_LIGHT_CLAY
+	.2byte ITEM_LIFE_ORB
+	.2byte ITEM_POWER_HERB
+	.2byte ITEM_FOCUS_SASH
+	.2byte ITEM_ZOOM_LENS
+	.2byte ITEM_METRONOME
+	.2byte ITEM_IRON_BALL
+	.2byte ITEM_LAGGING_TAIL
+	.2byte ITEM_DESTINY_KNOT
+	.2byte ITEM_BLACK_SLUDGE
+	.2byte ITEM_GRIP_CLAW
+	.2byte ITEM_STICKY_BARB
+	.2byte ITEM_SHED_SHELL
+	.2byte ITEM_BIG_ROOT
+	.2byte ITEM_RAZOR_CLAW
+	.2byte ITEM_RAZOR_FANG
 	pokemartlistend
 
 LilycoveCity_DepartmentStore_2F_Text_LearnToUseItemsProperly:

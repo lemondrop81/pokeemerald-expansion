@@ -72,6 +72,9 @@ enum EncounterType
 void EndDexNavSearch(u8 taskId);
 void Task_OpenDexNavFromStartMenu(u8 taskId);
 bool8 TryStartDexNavSearch(void);
+
+// Palette helper for unit tests
+u8 DexNav_GetTypePalette(u8 typeId);
 void TryIncrementSpeciesSearchLevel(void);
 void ResetDexNavSearch(void);
 bool8 TryFindHiddenPokemon(void);

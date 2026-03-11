@@ -191,6 +191,20 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
     },
 
+    [ABILITY_FOUNDRY] =
+    {
+        .name = _("Foundry"),
+        .description = COMPOUND_STRING("Rock moves become Fire-type and get a 30% boost.\nTurns Stealth Rock into a Fire hazard."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_VAMPIRIC] =
+    {
+        .name = _("Vampiric"),
+        .description = COMPOUND_STRING("Recovers 25% of damage dealt by contact moves."),
+        .aiRating = 4,
+    },
+
     [ABILITY_WONDER_GUARD] =
     {
         .name = _("Wonder Guard"),
@@ -288,6 +302,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Huge Power"),
         .description = COMPOUND_STRING("Raises Attack."),
+        .aiRating = 10,
+    },
+
+    [ABILITY_ATHENIAN] =
+    {
+        .name = _("Athenian"),
+        .description = COMPOUND_STRING("Raises Special Attack."),
         .aiRating = 10,
     },
 
@@ -1858,6 +1879,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Ups and resists sound."),
         .aiRating = 2,
         .breakable = TRUE,
+    },
+
+    [ABILITY_AMPLIFIER] =
+    {
+        .name = _("Amplifier"),
+        .description = COMPOUND_STRING("Boosts sound moves."),
+        .aiRating = 2,
     },
 
     [ABILITY_SAND_SPIT] =

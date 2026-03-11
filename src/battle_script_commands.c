@@ -3555,7 +3555,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
         }
         break;
     case MOVE_EFFECT_STEALTH_ROCK:
-        if (!IsHazardOnSide(GetBattlerSide(gEffectBattler), HAZARDS_STEALTH_ROCK))
+        if (!IsHazardOnSide(GetBattlerSide(gEffectBattler), HAZARDS_STEALTH_ROCK) && !IsHazardOnSide(GetBattlerSide(gEffectBattler), HAZARDS_FOUNDRY_ROCK))
         {
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_POINTEDSTONESFLOAT;
             BattleScriptPush(battleScript);
@@ -4858,7 +4858,44 @@ static void Cmd_getexp(void)
             gBattleScripting.getexpState = 6; // we're done
         }
         break;
-    case 6: // increment instruction
+    case 6: // check if wild Pokémon has a hold item after fainting
+        if (gBattleStruct->wildVictorySong && gBattleMons[gBattlerFainted].item != ITEM_NONE)
+        {
+            PrepareStringBattle(STRINGID_PKMNDROPPEDITEM, gBattleStruct->expGetterBattlerId);
+            gBattleScripting.getexpState = 7; // add item to bag
+        }
+        else
+        {
+            gBattleScripting.getexpState = 8; // no hold item, end battle
+        }
+        break;
+    case 7: // add dropped item to bag if space available
+        if (CheckBagHasSpace(gBattleMons[gBattlerFainted].item, 1) == TRUE)
+        {
+            u16 item = gBattleMons[gBattlerFainted].item;
+            AddBagItem(item, 1);
+
+            // if we haven't shown the description for this item yet, mark it
+            // so that the field callback will show it after the battle
+            if (!GetSetItemObtained(item, FLAG_GET_ITEM_OBTAINED))
+            {
+                // don't mark it yet; we'll set the flag when the header is
+                // hidden on the field so the box actually appears
+                gLastBattleItemObtained = item;
+            }
+
+            PREPARE_ITEM_BUFFER(gBattleTextBuff1, item);
+            PREPARE_POCKET_BUFFER(gBattleTextBuff2, item);
+            PrepareStringBattle(STRINGID_ADDEDTOBAG, gBattleStruct->expGetterBattlerId);
+            gBattleScripting.getexpState = 8;
+        }
+        else
+        {
+            PrepareStringBattle(STRINGID_BAGISFULL, gBattleStruct->expGetterBattlerId);
+            gBattleScripting.getexpState = 8;
+        }
+        break;
+    case 8: // increment instruction
         if (gBattleControllerExecFlags == 0)
         {
             // not sure why gf clears the item and ability here
@@ -5992,7 +6029,7 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
         }
         break;
     case EFFECT_STONE_AXE:
-        if (!IsHazardOnSide(side, HAZARDS_STEALTH_ROCK)
+        if (!IsHazardOnSide(side, HAZARDS_STEALTH_ROCK) && !IsHazardOnSide(side, HAZARDS_FOUNDRY_ROCK)
          && IsBattlerTurnDamaged(gBattlerTarget)
          && IsBattlerAlive(gBattlerAttacker))
         {
@@ -7915,9 +7952,11 @@ void TryHazardsOnSwitchIn(u32 battler, u32 side, enum Hazards hazardType)
         }
         break;
     case HAZARDS_STEALTH_ROCK:
+    case HAZARDS_FOUNDRY_ROCK:
         if (IsBattlerAffectedByHazards(battler, FALSE) && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
         {
-            gBattleStruct->passiveHpUpdate[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_POINTED_STONES, battler);
+            enum TypeSideHazard atkType = (hazardType == HAZARDS_FOUNDRY_ROCK) ? TYPE_FIRE : TYPE_SIDE_HAZARD_POINTED_STONES;
+            gBattleStruct->passiveHpUpdate[battler] = GetStealthHazardDamage(atkType, battler);
             if (gBattleStruct->passiveHpUpdate[battler] != 0)
                 SetDmgHazardsBattlescript(battler, B_MSG_STEALTHROCKDMG);
         }
@@ -13047,13 +13086,20 @@ static void Cmd_setstealthrock(void)
     CMD_ARGS(const u8 *failInstr);
 
     u8 targetSide = GetBattlerSide(gBattlerTarget);
-    if (IsHazardOnSide(targetSide, HAZARDS_STEALTH_ROCK))
+    // treat Foundry hazard as same as stealth rock for existence check
+    if (IsHazardOnSide(targetSide, HAZARDS_STEALTH_ROCK) || IsHazardOnSide(targetSide, HAZARDS_FOUNDRY_ROCK)
+     || IsHazardOnSide(targetSide, HAZARDS_FOUNDRY_ROCK))
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }
     else
     {
-        PushHazardTypeToQueue(targetSide, HAZARDS_STEALTH_ROCK);
+        enum Ability atkAbil = GetBattlerAbility(gBattlerAttacker);
+        if (atkAbil == ABILITY_FOUNDRY)
+            PushHazardTypeToQueue(targetSide, HAZARDS_FOUNDRY_ROCK);
+        else
+            // pushing handled earlier with ability check in modified Cmd_setstealthrock
+            PushHazardTypeToQueue(targetSide, (GetBattlerAbility(gBattlerAttacker) == ABILITY_FOUNDRY) ? HAZARDS_FOUNDRY_ROCK : HAZARDS_STEALTH_ROCK);
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
 }

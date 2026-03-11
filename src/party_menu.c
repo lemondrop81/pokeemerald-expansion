@@ -197,7 +197,8 @@ struct PartyMenuInternal
     u32 spriteIdCancelPokeball:7;
     u32 messageId:14;
     u8 windowId[3];
-    u8 actions[8];
+    // expanded from 8 to 16 to handle extra dynamic field-move entries
+    u8 actions[16];
     u8 numActions;
     // In vanilla Emerald, only the first 0xB0 hwords (0x160 bytes) are actually used.
     // However, a full 0x100 hwords (0x200 bytes) are allocated.
@@ -2881,16 +2882,36 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_MOVES);
 
     // Add field moves to action list
-    for (i = 0; i < MAX_MON_MOVES; i++)
+    // Add a field‑move action if the selected mon knows the move *or* if any
+    // party member is capable of learning it.  This mirrors the logic in
+    // field_move.c's unlock helpers and allows using a field move with a
+    // different Pokémon in front.
+    for (j = 0; j != FIELD_MOVES_COUNT; j++)
     {
-        for (j = 0; j != FIELD_MOVES_COUNT; j++)
+        u16 moveId = FieldMove_GetMoveId(j);
+        bool32 canUse = FALSE;
+
+        // Check current mon first
+        for (i = 0; i < MAX_MON_MOVES; i++)
         {
-            if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == FieldMove_GetMoveId(j))
+            if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == moveId)
             {
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                canUse = TRUE;
                 break;
             }
         }
+
+        // If the selected mon doesn't know it, check whether *it* can learn it
+        if (!canUse)
+        {
+            u16 selSpecies = GetMonData(&mons[slotId], MON_DATA_SPECIES);
+            if (selSpecies != SPECIES_NONE && selSpecies != SPECIES_EGG
+                && CanLearnTeachableMove(selSpecies, moveId))
+                canUse = TRUE;
+        }
+
+        if (canUse)
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
     }
 
     if (!InBattlePike())

@@ -2085,7 +2085,8 @@ static void SetSpriteInvisibility(u8 spriteArrayId, bool8 invisible)
 #define TYPE_ICON_PAL_NUM_0     13
 #define TYPE_ICON_PAL_NUM_1     14
 #define TYPE_ICON_PAL_NUM_2     15
-static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES] =
+// palette mapping used by DexNav type icons; exposed for tests via accessor
+const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES] =
 {
     [TYPE_NORMAL] = TYPE_ICON_PAL_NUM_0,
     [TYPE_FIGHTING] = TYPE_ICON_PAL_NUM_0,
@@ -2107,6 +2108,11 @@ static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES] =
     [TYPE_DARK] = TYPE_ICON_PAL_NUM_0,
     [TYPE_FAIRY] = TYPE_ICON_PAL_NUM_1,
 };
+u8 DexNav_GetTypePalette(u8 typeId)
+{
+    return sMoveTypeToOamPaletteNum[typeId];
+}
+
 static void SetTypeIconPosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
 {
     struct Sprite *sprite;

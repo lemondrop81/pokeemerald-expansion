@@ -64,6 +64,9 @@ extern bool8 gSkipShowMonAnim;
 extern u8 gTimeOfDay;
 extern s16 gTimeUpdateCounter;
 
+// item description helper for wild battle drops
+extern u16 gLastBattleItemObtained;
+
 extern struct TimeBlendSettings gTimeBlend;
 
 extern const struct UCoords32 gDirectionToVectors[];

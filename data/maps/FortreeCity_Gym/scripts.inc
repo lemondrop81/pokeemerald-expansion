@@ -23,6 +23,7 @@ FortreeCity_Gym_EventScript_Winona::
 	goto_if_eq VAR_RESULT, TRUE, FortreeCity_Gym_EventScript_WinonaRematch
 	goto_if_unset FLAG_RECEIVED_TM_AERIAL_ACE, FortreeCity_Gym_EventScript_GiveAerialAce2
 	msgbox FortreeCity_Gym_Text_WinonaPostBattle, MSGBOX_DEFAULT
+	call_if_ge FT_GiveMegaRing
 	release
 	end
 
@@ -46,6 +47,7 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 	setflag FLAG_ENABLE_WINONA_MATCH_CALL
 	setvar VAR_SCOTT_FORTREE_CALL_STEP_COUNTER, 0
 	setflag FLAG_SCOTT_CALL_FORTREE_GYM
+	call FT_GiveMegaRing
 	release
 	end
 
@@ -317,3 +319,21 @@ FortreeCity_Gym_Text_WinonaRematchNeedTwoMons:
 	.string "POKéMON with you?\p"
 	.string "Please return with two POKéMON\n"
 	.string "at the very least.$"
+
+FT_GiveMegaRing::
+	msgbox WinonaGivesMR
+	giveitem ITEM_MEGA_RING
+	closemessage
+	msgbox WinonafinishGiveRing
+	return
+
+WinonaGivesMR:
+	.string "Ahh, by the way, {PLAYER},\n"
+	.string "I got this for you, you should be\l"
+	.string "strong enough to use it.$"
+
+WinonafinishGiveRing:
+	.string "While you have that item with\n"
+	.string "you, your Pokémon that have mega\pstones\n"
+	.string " can mega-evolve in battle.\p"
+	.string "Make good use of it!$"

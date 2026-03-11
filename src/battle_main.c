@@ -5852,6 +5852,12 @@ enum Type TrySetAteType(u32 move, u32 battlerAtk, enum Ability attackerAbility)
     case ABILITY_GALVANIZE:
         ateType = TYPE_ELECTRIC;
         break;
+    case ABILITY_FOUNDRY:
+        if (GetMoveType(move) == TYPE_ROCK)
+            ateType = TYPE_FIRE;
+        else
+            ateType = TYPE_NONE;
+        break;
     default:
         ateType = TYPE_NONE;
         break;
@@ -6072,6 +6078,15 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum Mo
           && ability != ABILITY_NORMALIZE)
     {
         return TYPE_DARK;
+    }
+    else if (moveType == TYPE_ROCK
+          && ability == ABILITY_FOUNDRY
+          && gimmick != GIMMICK_DYNAMAX
+          && gimmick != GIMMICK_Z_MOVE)
+    {
+        if (state == MON_IN_BATTLE)
+            gBattleStruct->battlerState[battler].ateBoost = TRUE;
+        return TYPE_FIRE;
     }
     else if (moveType == TYPE_NORMAL
           && ability != ABILITY_NORMALIZE

@@ -3526,6 +3526,10 @@ EWRAM_DATA static u8 sHeaderBoxWindowId = 0;
 EWRAM_DATA u8 sItemIconSpriteId = 0;
 EWRAM_DATA u8 sItemIconSpriteId2 = 0;
 
+// last item obtained from a wild Pokémon drop, used to show the
+// "first time" header after returning to the field
+EWRAM_DATA u16 gLastBattleItemObtained = ITEM_NONE;
+
 static void ShowItemIconSprite(u16 item, bool8 firstTime, bool8 flash);
 static void DestroyItemIconSprite(void);
 

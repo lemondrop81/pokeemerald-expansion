@@ -86,6 +86,7 @@ SootopolisCity_Gym_1F_EventScript_Juan::
 	goto_if_unset FLAG_RECEIVED_TM_WATER_PULSE, SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2
 	goto_if_unset FLAG_BADGE06_GET, SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge
 	msgbox SootopolisCity_Gym_1F_Text_JuanPostBattle, MSGBOX_DEFAULT
+	call SS_GiveDynamxBand
 	release
 	end
 
@@ -316,4 +317,21 @@ SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons:
 	.string "You have with you but one POKéMON.\p"
 	.string "I wish that you would return with\n"
 	.string "two, perhaps more, POKéMON, please.$"
+
+SS_GiveDynamxBand::
+	msgbox JuanGivesDB
+	giveitem ITEM_DYNAMAX_BAND
+	closemessage
+	msgbox JuanfinishGiveBand
+	return
+
+JuanGivesDB:
+	.string "Ahh, by the way, {PLAYER},\n"
+	.string "I got this for you, you should be\l"
+	.string "strong enough to use it.$"
+
+JuanfinishGiveBand:
+	.string "While you have that item with\n"
+	.string "you, your Pokémon can use Dynamax.\p"
+	.string "Make good use of it!$"
 

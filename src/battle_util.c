@@ -5410,6 +5410,29 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 effect++;
             }
             break;
+        case ABILITY_VAMPIRIC:
+            if (IsBattlerAlive(gBattlerTarget)
+             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+             && IsBattlerTurnDamaged(gBattlerTarget)
+             && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker), move))
+            {
+                if (!gBattleMons[gBattlerAttacker].volatiles.healBlock)
+                {
+                    s32 heal = gBattleStruct->moveDamage[gBattlerTarget] / 4;
+                    if (heal == 0)
+                        heal = 1;
+                    SetPassiveDamageAmount(gBattlerAttacker, -heal);
+                    /* manual write to avoid converting 311 to u8 in macro */
+                    gBattleTextBuff1[0] = B_BUFF_PLACEHOLDER_BEGIN;
+                    gBattleTextBuff1[1] = B_BUFF_ABILITY;
+                    gBattleTextBuff1[2] = ABILITY_VAMPIRIC & 0xFF;
+                    gBattleTextBuff1[3] = (ABILITY_VAMPIRIC & 0xFF00) >> 8;
+                    gBattleTextBuff1[4] = B_BUFF_EOS;
+                    BattleScriptCall(BattleScript_IceBodyHeal);
+                    effect++;
+                }
+            }
+            break;
         case ABILITY_GULP_MISSILE:
             if ((gBattleMons[gBattlerAttacker].species == SPECIES_CRAMORANT)
              && ((gCurrentMove == MOVE_SURF && IsBattlerTurnDamaged(gBattlerTarget)) || gBattleMons[gBattlerAttacker].volatiles.semiInvulnerable == STATE_UNDERWATER)
@@ -7438,6 +7461,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (moveType == TYPE_ICE && gBattleStruct->battlerState[battlerAtk].ateBoost)
             modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
         break;
+    case ABILITY_FOUNDRY:
+        if (moveType == TYPE_FIRE && gBattleStruct->battlerState[battlerAtk].ateBoost)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
     case ABILITY_AERILATE:
         if (moveType == TYPE_FLYING && gBattleStruct->battlerState[battlerAtk].ateBoost)
             modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
@@ -7449,6 +7476,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
     case ABILITY_PUNK_ROCK:
         if (IsSoundMove(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
+    case ABILITY_AMPLIFIER:
+        if (IsSoundMove(move))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.25));
         break;
     case ABILITY_STEELY_SPIRIT:
         if (moveType == TYPE_STEEL)
@@ -7722,6 +7753,10 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
     case ABILITY_HUGE_POWER:
     case ABILITY_PURE_POWER:
         if (IsBattleMovePhysical(move))
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+        break;
+    case ABILITY_ATHENIAN:
+        if (IsBattleMoveSpecial(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
     case ABILITY_SLOW_START:
@@ -10751,7 +10786,9 @@ void RemoveHazardFromField(u32 side, enum Hazards hazardType)
     u32 i;
     for (i = 0; i < HAZARDS_MAX_COUNT; i++)
     {
-        if (gBattleStruct->hazardsQueue[side][i] == hazardType)
+        if (gBattleStruct->hazardsQueue[side][i] == hazardType
+         || (hazardType == HAZARDS_STEALTH_ROCK && gBattleStruct->hazardsQueue[side][i] == HAZARDS_FOUNDRY_ROCK)
+         || (hazardType == HAZARDS_FOUNDRY_ROCK && gBattleStruct->hazardsQueue[side][i] == HAZARDS_STEALTH_ROCK))
         {
             gBattleStruct->hazardsQueue[side][i] = HAZARDS_NONE;
             gBattleStruct->numHazards[side]--;

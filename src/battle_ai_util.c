@@ -1296,6 +1296,17 @@ enum MoveComparisonResult AI_WhichMoveBetter(u32 move1, u32 move2, u32 battlerAt
     enum Ability defAbility = gAiLogicData->abilities[battlerDef];
     enum Ability atkAbility = gAiLogicData->abilities[battlerAtk];
 
+    // Check if physical moves hurt or heal.
+    if (atkAbility == ABILITY_VAMPIRIC)
+    {
+        bool32 moveContact1 = MoveMakesContact(move1);
+        bool32 moveContact2 = MoveMakesContact(move2);
+        if (moveContact1 && !moveContact2)
+            return MOVE_WON_COMPARISON;
+        if (moveContact2 && !moveContact1)
+            return MOVE_LOST_COMPARISON;
+    }
+
     // Check if physical moves hurt.
     if (gAiLogicData->holdEffects[battlerAtk] != HOLD_EFFECT_PROTECTIVE_PADS && atkAbility != ABILITY_LONG_REACH
         && (gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_ROCKY_HELMET
@@ -2417,6 +2428,19 @@ bool32 HasMoveWithCategory(u32 battler, enum DamageCategory category)
     return FALSE;
 }
 
+bool32 HasSoundMove(u32 battler)
+{
+    u32 i;
+    u16 *moves = GetMovesArray(battler);
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (moves[i] != MOVE_NONE && moves[i] != MOVE_UNAVAILABLE && IsSoundMove(moves[i]))
+            return TRUE;
+    }
+    return FALSE;
+}
+
 bool32 HasMoveWithType(u32 battler, enum Type type)
 {
     s32 i;
@@ -3299,8 +3323,11 @@ static bool32 PartyBattlerShouldAvoidHazards(u32 currBattler, u32 switchBattler)
     if (holdEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS)
         return FALSE;
 
-    if (IsHazardOnSide(side, HAZARDS_STEALTH_ROCK))
-        hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_POINTED_STONES, type1, type2, maxHp);
+    if (IsHazardOnSide(side, HAZARDS_STEALTH_ROCK) || IsHazardOnSide(side, HAZARDS_FOUNDRY_ROCK))
+    {
+        enum TypeSideHazard atkType = IsHazardOnSide(side, HAZARDS_FOUNDRY_ROCK) ? TYPE_FIRE : TYPE_SIDE_HAZARD_POINTED_STONES;
+        hazardDamage += GetStealthHazardDamageByTypesAndHP(atkType, type1, type2, maxHp);
+    }
     if (IsHazardOnSide(side, HAZARDS_STEELSURGE))
         hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_SHARP_STEEL, type1, type2, maxHp);
 
@@ -6070,6 +6097,14 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, enum Ability ability, struct Ai
     case ABILITY_HUGE_POWER:
     case ABILITY_PURE_POWER:
         if (HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL))
+            return BEST_EFFECT;
+        break;
+    case ABILITY_AMPLIFIER:
+        if (HasSoundMove(battler))
+            return BEST_EFFECT;
+        break;
+    case ABILITY_ATHENIAN:
+        if (HasMoveWithCategory(battler, DAMAGE_CATEGORY_SPECIAL))
             return BEST_EFFECT;
         break;
     // Also used to Worry Seed WORRY_SEED
