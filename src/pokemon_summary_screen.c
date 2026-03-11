@@ -911,10 +911,6 @@ static const union AnimCmd sSpriteAnim_TypeStellar[] = {
     ANIMCMD_FRAME(TYPE_STELLAR * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
-static const union AnimCmd sSpriteAnim_TypeNuclear[] = {
-    ANIMCMD_FRAME(TYPE_NUCLEAR * 8, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
 static const union AnimCmd sSpriteAnim_CategoryCool[] = {
     ANIMCMD_FRAME((CONTEST_CATEGORY_COOL + NUMBER_OF_MON_TYPES) * 8, 0, FALSE, FALSE),
     ANIMCMD_END
@@ -957,19 +953,12 @@ static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES
     [TYPE_DARK] = sSpriteAnim_TypeDark,
     [TYPE_FAIRY] = sSpriteAnim_TypeFairy,
     [TYPE_STELLAR] = sSpriteAnim_TypeStellar,
-    [TYPE_NUCLEAR] = sSpriteAnim_TypeNuclear,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_COOL] = sSpriteAnim_CategoryCool,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_BEAUTY] = sSpriteAnim_CategoryBeauty,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_CUTE] = sSpriteAnim_CategoryCute,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_SMART] = sSpriteAnim_CategorySmart,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_TOUGH] = sSpriteAnim_CategoryTough,
 };
-
-// Ensure the animation table includes entries for every mon type we expect.
-// This will fail to compile if a type is added but not given an animation slot.
-_Static_assert(TYPE_NUCLEAR < NUMBER_OF_MON_TYPES, "TYPE_NUCLEAR must be a valid mon type");
-// Ensure animation table length covers every type; each entry should be initialized
-_Static_assert(TYPE_NUCLEAR < ARRAY_COUNT(sSpriteAnimTable_MoveTypes), "Animation table too small for new type");
 
 const struct CompressedSpriteSheet gSpriteSheet_MoveTypes =
 {

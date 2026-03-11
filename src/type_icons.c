@@ -177,7 +177,6 @@ const union AnimCmd *const sSpriteAnimTable_TypeIcons[] =
     [TYPE_DARK] =       sSpriteAnim_TypeIcon_Dark,
     [TYPE_FAIRY] =      sSpriteAnim_TypeIcon_Fairy,
     [TYPE_STELLAR] =    sSpriteAnim_TypeIcon_Mystery,
-    [TYPE_NUCLEAR] =    sSpriteAnim_TypeIcon_Mystery,
 };
 
 const struct SpritePalette sTypeIconPal1 =
